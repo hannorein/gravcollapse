@@ -1,0 +1,14 @@
+	The code posted here is identical with Professor Rein et al.'s REBOUND, except for the follwoing changes:
+
+	1. The function "collisions_resolve()" in collisions.c has an extra line at the very end to update the tree: it just calls tree_update(). It also prints out the collision counter number there.
+
+	2. The function "tree_update_cell()" in tree.c has the extra if statement checking whether the node->pt = 123456789, as suggested. It was placed after the node is checked for being null - otherwise a segfault resulted immediately after program execution.
+
+	3. In the initialization of the problem in gravcollapse.c in "problem_init()" the variable collision_resolve is set to collision_resolve_merger, to change the collision resolution routine to the one adopted from the "mergers" example (the function itself is posted later in the gravcollapse.c file). 
+
+	4. In the "collision_resolve_merger()" function in gravcollapse.c, the lines to remove one of the particles are implemented as suggested, namely (here c.p2 is the index of the particle that is destroyed in a given collision)
+		particles[N-1].c->pt = 123456789;
+		particles[c.p2] = particles[N-1];
+		particles[c.p2].c->pt = c.p2;
+		N--;
+
