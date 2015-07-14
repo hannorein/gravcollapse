@@ -1,4 +1,6 @@
-	The code posted here is identical with Professor Rein et al.'s REBOUND, except for the follwoing changes:
+	The code posted here is identical with Professor Rein et al.'s REBOUND, except for the following changes:
+	
+	0. The gravcollapse.c is the problem.c file - it is located in the examples folder, in gravcollapse.
 
 	1. The function "collisions_resolve()" in collisions.c has an extra line at the very end to update the tree: it just calls tree_update(). It also prints out the collision counter number there.
 
