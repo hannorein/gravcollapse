@@ -1,1 +1,1 @@
-../problems/Gravcollapse/gravcollapse.c
+../examples/gravcollapse/gravcollapse.c

@@ -52,6 +52,9 @@ extern double gravity_minimum_mass;
 #endif // GRAVITY_GRAPE
 
 void particles_add_local(struct particle pt){
+	if(pt.x>boxsize_x/2.){
+		return;
+	}
 #ifdef BOUNDARIES_OPEN
 	if (boundaries_particle_is_in_box(pt)==0){
 		// Particle has left the box. Do not add.

@@ -158,12 +158,6 @@ struct cell *tree_update_cell(struct cell *node){
 		return NULL;
 	}
 
-	if (node->pt==123456789)
-	{
-     	   free(node);
-    	   return NULL;
-	}
-
 	// Non-leaf nodes	
 	if (node->pt < 0) {
 		for (int o=0; o<8; o++) {

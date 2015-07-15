@@ -250,11 +250,7 @@ void collision_resolve_merger(struct collision c){
 	particles[c.p1].m = cm.m;
 	// Remove one particle.
 
-//	particles_remove(c.p2, 0);
-	particles[N-1].c->pt = 123456789;
-	particles[c.p2] = particles[N-1];
-	particles[c.p2].c->pt = c.p2;
-	N--;
+	particles[c.p2].x = boxsize *1000.;
 
 	// Make sure we don't drift, so let's go back to the center of momentum
 //	tools_move_to_center_of_momentum();
